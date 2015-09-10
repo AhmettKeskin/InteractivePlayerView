@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InteractivePlayerView" customModule="InteractivePlayerView" customModuleProvider="target">
+            <connections>
+                <outlet property="actionOne" destination="C8r-8c-9W8" id="q2s-Zh-5L0"/>
+                <outlet property="actionOneButtonHeight" destination="wUW-rZ-pGC" id="1eX-BR-xTG"/>
+                <outlet property="actionOneButtonWidth" destination="NvD-ps-syk" id="MUF-Wf-zSA"/>
+                <outlet property="actionThree" destination="I7s-9w-s53" id="OIZ-43-eRy"/>
+                <outlet property="actionThreeButtonHeight" destination="tqc-Gb-h0N" id="ymd-Zf-1Uj"/>
+                <outlet property="actionThreeButtonWidth" destination="Q9E-8x-Uh3" id="Qqm-aG-qU1"/>
+                <outlet property="actionTwo" destination="9qR-6p-blL" id="8VS-gs-7Cs"/>
+                <outlet property="actionTwoButtonHeight" destination="Qih-96-yFi" id="i4A-a3-SCc"/>
+                <outlet property="actionTwoButtonWidth" destination="Mzt-ov-c3g" id="Fmf-kl-9Fb"/>
+                <outlet property="coverImageView" destination="Skm-sd-xmf" id="SQv-XR-8tZ"/>
+                <outlet property="timeLabel" destination="Rfw-3d-vwp" id="REh-6k-Yb6"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Skm-sd-xmf">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfw-3d-vwp">
+                    <rect key="frame" x="8" y="79" width="184" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="zQG-xj-8Ie"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8r-8c-9W8">
+                    <rect key="frame" x="62" y="129" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="NvD-ps-syk"/>
+                        <constraint firstAttribute="height" constant="20" id="wUW-rZ-pGC"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="actionOneButtonTapped:" destination="-1" eventType="touchUpInside" id="6U8-dA-xwu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qR-6p-blL">
+                    <rect key="frame" x="90" y="129" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="Mzt-ov-c3g"/>
+                        <constraint firstAttribute="height" constant="20" id="Qih-96-yFi"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="actionTwoButtonTapped:" destination="-1" eventType="touchUpInside" id="t5G-b7-Tnb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7s-9w-s53">
+                    <rect key="frame" x="118" y="129" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="Q9E-8x-Uh3"/>
+                        <constraint firstAttribute="height" constant="20" id="tqc-Gb-h0N"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="actionThreeButtonTapped:" destination="-1" eventType="touchUpInside" id="m65-Cr-THO"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Rfw-3d-vwp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="3vr-Kk-IGv"/>
+                <constraint firstItem="Skm-sd-xmf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="A95-Tg-Hmd"/>
+                <constraint firstItem="Skm-sd-xmf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CyJ-yK-fOV"/>
+                <constraint firstItem="C8r-8c-9W8" firstAttribute="top" secondItem="Rfw-3d-vwp" secondAttribute="bottom" constant="8" id="Dsq-DD-I4f"/>
+                <constraint firstAttribute="centerY" secondItem="Rfw-3d-vwp" secondAttribute="centerY" id="Gsd-7P-ULY"/>
+                <constraint firstAttribute="bottom" secondItem="Skm-sd-xmf" secondAttribute="bottom" id="NEb-Jp-pmg"/>
+                <constraint firstItem="I7s-9w-s53" firstAttribute="leading" secondItem="9qR-6p-blL" secondAttribute="trailing" constant="8" id="UjG-hY-Tx9"/>
+                <constraint firstAttribute="centerX" secondItem="9qR-6p-blL" secondAttribute="centerX" id="d0t-P7-8Ux"/>
+                <constraint firstItem="I7s-9w-s53" firstAttribute="top" secondItem="Rfw-3d-vwp" secondAttribute="bottom" constant="8" id="jkk-MG-9Mb"/>
+                <constraint firstAttribute="trailing" secondItem="Rfw-3d-vwp" secondAttribute="trailing" constant="8" id="mOz-HJ-Twb"/>
+                <constraint firstAttribute="trailing" secondItem="Skm-sd-xmf" secondAttribute="trailing" id="nro-HX-QAO"/>
+                <constraint firstItem="9qR-6p-blL" firstAttribute="leading" secondItem="C8r-8c-9W8" secondAttribute="trailing" constant="8" id="pFi-0y-Ksy"/>
+                <constraint firstAttribute="centerX" secondItem="Rfw-3d-vwp" secondAttribute="centerX" id="sHS-NP-Ycg"/>
+                <constraint firstItem="9qR-6p-blL" firstAttribute="top" secondItem="Rfw-3d-vwp" secondAttribute="bottom" constant="8" id="ujk-dK-sGQ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="259" y="101"/>
+        </view>
+    </objects>
+</document>

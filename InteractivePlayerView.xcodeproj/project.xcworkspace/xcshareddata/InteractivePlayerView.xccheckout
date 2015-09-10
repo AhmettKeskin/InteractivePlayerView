@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F4440D82-C276-423F-9BAB-EA323D4A39E5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>InteractivePlayerView</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>00A6878925B58B42ABEDD412CC261BF16DF3F39B</key>
+		<string>https://github.com/AhmettKeskin/InteractivePlayerView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>InteractivePlayerView.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>00A6878925B58B42ABEDD412CC261BF16DF3F39B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/AhmettKeskin/InteractivePlayerView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>00A6878925B58B42ABEDD412CC261BF16DF3F39B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>00A6878925B58B42ABEDD412CC261BF16DF3F39B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>InteractivePlayerView</string>
+		</dict>
+	</array>
+</dict>
+</plist>
