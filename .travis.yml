@@ -1,0 +1,13 @@
+language: swift
+ 
+branches:
+ only:
+ - master
+ 
+xcode_project: InteractivePlayerView.xcodeproj
+xcode_scheme: InteractivePlayerViewTests
+osx_image: xcode 6.4
+xcode_sdk: iphonesimulator 8.4
+ 
+script:
+- xcodebuild clean build test -project InteractivePlayerView.xcodeproj -scheme InteractivePlayerViewTests
