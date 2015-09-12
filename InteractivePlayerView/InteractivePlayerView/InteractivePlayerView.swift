@@ -96,7 +96,7 @@ class InteractivePlayerView : UIView {
     private var isAnimating : Bool = false
     
     /* increasing duration in updateTime */
-    private var duration : Int = 0
+    private var duration : Double = 0
 
     private let circleLayer: CAShapeLayer! = CAShapeLayer()
 
@@ -416,8 +416,8 @@ class InteractivePlayerView : UIView {
     
     func updateTime(){
         
-        self.duration += 1
-        let totalDuration = self.duration
+        self.duration += 0.1
+        let totalDuration = Int(self.duration)
         let min = totalDuration / 60
         let sec = totalDuration % 60
         
@@ -426,7 +426,7 @@ class InteractivePlayerView : UIView {
     }
     
     private func startTimer(){
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
 
     }
     

@@ -12,7 +12,7 @@ class ViewController: UIViewController, InteractivePlayerViewDelegate {
     
     
     @IBOutlet var blurBgImage: UIImageView!
-    @IBOutlet var ivp: InteractivePlayerView!
+    @IBOutlet var ipv: InteractivePlayerView!
     @IBOutlet var containerView: UIView!
 
     @IBOutlet var playButton: UIButton!
@@ -28,10 +28,10 @@ class ViewController: UIViewController, InteractivePlayerViewDelegate {
         self.makeImageBlurry(self.blurBgImage)
         self.makeItRounded(self.playPauseButtonView, newSize: self.playPauseButtonView.frame.width)
 
-        self.ivp!.delegate = self
+        self.ipv!.delegate = self
         
         // duration of music
-        self.ivp.progress = 120.0
+        self.ipv.progress = 20.0
 
     }
 
@@ -42,7 +42,7 @@ class ViewController: UIViewController, InteractivePlayerViewDelegate {
     
     @IBAction func playButtonTapped(sender: AnyObject) {
         
-        self.ivp.start()
+        self.ipv.start()
 
         self.playButton.hidden = true
         self.pauseButton.hidden = false
@@ -51,7 +51,7 @@ class ViewController: UIViewController, InteractivePlayerViewDelegate {
     
     @IBAction func pauseButtonTapped(sender: AnyObject) {
         
-        self.ivp.stop()
+        self.ipv.stop()
         
         self.playButton.hidden = false
         self.pauseButton.hidden = true

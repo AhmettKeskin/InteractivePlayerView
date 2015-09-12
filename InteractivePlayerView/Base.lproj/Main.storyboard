@@ -167,7 +167,7 @@
                     <connections>
                         <outlet property="blurBgImage" destination="CkH-32-8BV" id="h1a-yy-0Gh"/>
                         <outlet property="containerView" destination="VoE-8H-C6h" id="P2b-uz-alu"/>
-                        <outlet property="ivp" destination="IpE-nB-jCE" id="Gga-00-fit"/>
+                        <outlet property="ipv" destination="IpE-nB-jCE" id="WZH-hj-iis"/>
                         <outlet property="pauseButton" destination="ddB-2N-tO5" id="IRk-dw-5Cw"/>
                         <outlet property="playButton" destination="RXm-VX-b7K" id="96I-aR-Q07"/>
                         <outlet property="playPauseButtonView" destination="Hrn-tl-c2E" id="ivJ-tR-Q4D"/>
@@ -176,42 +176,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sz5-ja-QNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="341" y="811"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="kGp-w2-rcK">
-            <objects>
-                <viewController id="xxI-s0-XOi" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="E22-zb-klc"/>
-                        <viewControllerLayoutGuide type="bottom" id="OMC-Ji-aML"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rWp-XY-Aie">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6dy-7l-Eb2" customClass="InteractivePlayerViewController" customModule="InteractivePlayerView" customModuleProvider="target">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonSizes">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="coverImage" value="imagetest.png"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="actionOne_icon_selected" value="shuffle_selected.png"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="actionOne_icon_unselected" value="shuffle_unselected.png"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="actionTwo_icon_selected" value="like_selected.png"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="actionTwo_icon_unselected" value="like_unselected.png"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="actionThree_icon_selected" value="replay_selected.png"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="actionThree_icon_unselected" value="replay_unselected.png"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mOl-V6-nGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="381" y="1693"/>
         </scene>
     </scenes>
     <resources>
