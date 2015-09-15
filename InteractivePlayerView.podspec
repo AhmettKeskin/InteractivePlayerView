@@ -9,7 +9,8 @@ Pod::Spec.new do |s|
   s.summary      = 'Custom music player view iOS'
   s.ios.deployment_target = '8.0'
   s.source       = { :git => 'https://github.com/AhmettKeskin/InteractivePlayerView.git', :tag => 'v1.0' }
-  s.source_files = 'InteractivePlayerView.swift','InteractivePlayerView.xib'
+  s.resources = "ipv_source/*.{xib}"
+  s.source_files = 'ipv_source/*.{swift}'
   s.framework    = 'SystemConfiguration'
   s.requires_arc = true
 end
