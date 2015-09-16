@@ -1,5 +1,7 @@
 # InteractivePlayerView
 
+[![Join the chat at https://gitter.im/AhmettKeskin/InteractivePlayerView](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AhmettKeskin/InteractivePlayerView?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Custom iOS music player view
 
 # Screen
