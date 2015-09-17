@@ -59,15 +59,15 @@ class ViewController: UIViewController, InteractivePlayerViewDelegate {
     
     /* InteractivePlayerViewDelegate METHODS */
     func actionOneButtonTapped(sender: UIButton, isSelected: Bool) {
-        println("shuffle \(isSelected.description)")
+        print("shuffle \(isSelected.description)")
     }
     
     func actionTwoButtonTapped(sender: UIButton, isSelected: Bool) {
-        println("like \(isSelected.description)")
+        print("like \(isSelected.description)")
     }
     
     func actionThreeButtonTapped(sender: UIButton, isSelected: Bool) {
-        println("replay \(isSelected.description)")
+        print("replay \(isSelected.description)")
 
     }
     
@@ -80,7 +80,7 @@ class ViewController: UIViewController, InteractivePlayerViewDelegate {
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
             //always fill the view
             blurEffectView.frame = imageView.bounds
-            blurEffectView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+            blurEffectView.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
             
             imageView.addSubview(blurEffectView)
 

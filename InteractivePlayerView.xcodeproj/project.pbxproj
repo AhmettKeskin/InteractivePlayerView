@@ -225,6 +225,8 @@
 		59B8360F1B7DF1F6007E1290 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Mobiwise;
 				TargetAttributes = {
