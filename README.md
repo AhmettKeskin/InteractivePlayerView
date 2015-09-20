@@ -13,7 +13,14 @@ InteractivePlayerView is an IBDesignableView (Custom View) which has its own pro
 ## Installation
   [Download](https://github.com/AhmettKeskin/InteractivePlayerView/archive/master.zip) the project and copy the InteractivePlayerView folder into your project and then simply you can use it in any file
 
+#### Cocoapods
 
+```swift
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'InteractivePlayerView'
+```
 ## Usage
 - Add your view in storyboard
 - Arrange your view's size square (It looks better this way)
@@ -22,17 +29,17 @@ InteractivePlayerView is an IBDesignableView (Custom View) which has its own pro
 - Then create your property of view and set it's delegate to self to use it's delegation methods and good to go !
 
 ``` swift
-  @IBOutlet var ivp: InteractivePlayerView!
+  @IBOutlet var ipv: InteractivePlayerView!
   
   // set delegation
-  self.ivp!.delegate = self
+  self.ipv!.delegate = self
 
   // duration of music
-  self.ivp.progress = 120.0
+  self.ipv.progress = 120.0
   
   // start - stop player
-  self.ivp.start()
-  self.ivp.stop()
+  self.ipv.start()
+  self.ipv.stop()
 
   /* InteractivePlayerViewDelegate METHODS */
     func actionOneButtonTapped(sender: UIButton, isSelected: Bool) {
@@ -54,23 +61,23 @@ InteractivePlayerView is an IBDesignableView (Custom View) which has its own pro
 
 ``` swift
   // set progress colors
-  self.ivp.progressEmptyColor = UIColor.yellowColor()
-  self.ivp.progressFullColor = UIColor.redColor()
+  self.ipv.progressEmptyColor = UIColor.yellowColor()
+  self.ipv.progressFullColor = UIColor.redColor()
 
 ```
 ``` swift
   // get and set isSelected value of action buttons
-  let isSelected = self.ivp.isActionOneSelected
-  self.ivp.isActionOneSelected = true
+  let isSelected = self.ipv.isActionOneSelected
+  self.ipv.isActionOneSelected = true
 ```
 ```swift
   // Buttons are also square and setting one value to width and height is enough. And also you can set action button's images
-  self.ivp.buttonSizes = 30.0
+  self.ipv.buttonSizes = 30.0
 
-  self.ivp.actionOne_icon_selected = UIImage(named: "shuffle_selected.png")
-  self.ivp.actionOne_icon_unselected = UIImage(named: "shuffle_unselected.png")
+  self.ipv.actionOne_icon_selected = UIImage(named: "shuffle_selected.png")
+  self.ipv.actionOne_icon_unselected = UIImage(named: "shuffle_unselected.png")
 
-  self.ivp.coverImage = UIImage(named: "imagetest.png")
+  self.ipv.coverImage = UIImage(named: "imagetest.png")
 
 ```
 
