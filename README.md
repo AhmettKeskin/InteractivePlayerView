@@ -40,6 +40,9 @@ pod 'InteractivePlayerView'
   // start - stop player
   self.ipv.start()
   self.ipv.stop()
+  
+  // restart player with duration
+  self.ipv.restartWithProgress(duration: 50)
 
   /* InteractivePlayerViewDelegate METHODS */
     func actionOneButtonTapped(sender: UIButton, isSelected: Bool) {
