@@ -57,6 +57,14 @@ class ViewController: UIViewController, InteractivePlayerViewDelegate {
         self.pauseButton.hidden = true
     }
     
+    @IBAction func nextTapped(sender: AnyObject) {
+        self.ipv.restartWithProgress(duration: 50)
+    }
+    
+    @IBAction func previousTapped(sender: AnyObject) {
+        self.ipv.restartWithProgress(duration: 10)
+    }
+    
     /* InteractivePlayerViewDelegate METHODS */
     func actionOneButtonTapped(sender: UIButton, isSelected: Bool) {
         print("shuffle \(isSelected.description)")

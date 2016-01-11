@@ -326,7 +326,7 @@ class InteractivePlayerView : UIView {
         view.center = saveCenter
     }
     
-    private  func addCirle(arcRadius: CGFloat, capRadius: CGFloat, color: UIColor, strokeStart : CGFloat, strokeEnd : CGFloat) {
+    private func addCirle(arcRadius: CGFloat, capRadius: CGFloat, color: UIColor, strokeStart : CGFloat, strokeEnd : CGFloat) {
 
         let centerPoint = CGPointMake(CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds))
         let startAngle = CGFloat(M_PI_2)
@@ -401,6 +401,14 @@ class InteractivePlayerView : UIView {
         circleLayer.addAnimation(animation, forKey: "animateCircle")
     }
     
+    private func resetAnimationCircle(){
+        
+        circleLayer.removeAllAnimations()
+        self.createProgressCircle()
+        self.isAnimating = false
+
+    }
+    
     private func pauseLayer(layer : CALayer) {
         let pauseTime = layer.convertTime(CACurrentMediaTime(), fromLayer: nil)
         layer.speed = 0.0
@@ -416,17 +424,6 @@ class InteractivePlayerView : UIView {
         layer.beginTime = timeSincePause
     }
     
-    func updateTime(){
-        
-        self.duration += 0.1
-        let totalDuration = Int(self.duration)
-        let min = totalDuration / 60
-        let sec = totalDuration % 60
-        
-        timeLabel.text = NSString(format: "%i:%02i",min,sec ) as String
-        
-    }
-    
     private func startTimer(){
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
 
@@ -437,6 +434,17 @@ class InteractivePlayerView : UIView {
             timer.invalidate()
             timer = nil
         }
+    }
+    
+    func updateTime(){
+        
+        self.duration += 0.1
+        let totalDuration = Int(self.duration)
+        let min = totalDuration / 60
+        let sec = totalDuration % 60
+        
+        timeLabel.text = NSString(format: "%i:%02i",min,sec ) as String
+        
     }
     
     /* Start timer and animation */
@@ -458,6 +466,10 @@ class InteractivePlayerView : UIView {
         }
     }
     
-
+    func restartWithProgress(duration duration : Double){
+        progress = duration
+        self.resetAnimationCircle()
+        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "start", userInfo: nil, repeats: false)
+    }
     
 }
