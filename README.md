@@ -13,7 +13,7 @@ InteractivePlayerView is an IBDesignableView (Custom View) which has its own pro
 ## Installation
   [Download](https://github.com/AhmettKeskin/InteractivePlayerView/archive/master.zip) the project and copy the InteractivePlayerView folder into your project and then simply you can use it in any file
 
-#### Cocoapods
+#### CocoaPods
 
 ```swift
 platform :ios, '8.0'
