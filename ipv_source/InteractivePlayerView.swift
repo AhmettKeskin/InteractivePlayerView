@@ -47,6 +47,9 @@ class InteractivePlayerView : UIView {
     var progressEmptyColor : UIColor = UIColor.whiteColor()
     var progressFullColor : UIColor = UIColor.redColor()
     
+    /// used to change current time of the sound . default is true
+    var panEnabled:Bool = true
+    
     /// is ActionOne selected
     var isActionOneSelected : Bool = false {
         
@@ -98,9 +101,13 @@ class InteractivePlayerView : UIView {
     private var isAnimating : Bool = false
     
     /* increasing duration in updateTime */
-    private var duration : Double = 0
+    private var duration : Double{
+        didSet{
+            redrawStrokeEnd()
+        }
+    }
 
-    private let circleLayer: CAShapeLayer! = CAShapeLayer()
+    private var circleLayer: CAShapeLayer! = CAShapeLayer()
 
     /* Setting action buttons constraint width - height with buttonSizes */
     @IBInspectable var buttonSizes : CGFloat = 20.0 {
@@ -212,15 +219,21 @@ class InteractivePlayerView : UIView {
     
     override init(frame: CGRect) {
        
+        self.duration = 0
+        
         super.init(frame: frame)
         self.createUI()
+        self.addPanGesture()
 
     }
     
     required init?(coder aDecoder: NSCoder) {
       
+           self.duration = 0
+        
         super.init(coder: aDecoder)
         self.createUI()
+         self.addPanGesture()
        
     }
     
@@ -351,6 +364,8 @@ class InteractivePlayerView : UIView {
     
     private func createProgressCircle(){
         
+       
+        
         let centerPoint = CGPointMake(CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds))
         let startAngle = CGFloat(M_PI_2)
         let endAngle = CGFloat(M_PI * 2 + M_PI_2)
@@ -361,6 +376,7 @@ class InteractivePlayerView : UIView {
         
         // Setup the CAShapeLayer with the path, colors, and line width
 
+        circleLayer = CAShapeLayer()
         circleLayer.path = circlePath
         circleLayer.fillColor = UIColor.clearColor().CGColor
         circleLayer.shadowColor = UIColor.blackColor().CGColor
@@ -371,42 +387,29 @@ class InteractivePlayerView : UIView {
         circleLayer.shadowOpacity = 0
         circleLayer.shadowOffset = CGSizeZero
         
-        // Don't draw the circle initially
-        circleLayer.strokeEnd = 0.0
+        // draw the colorful , nice progress circle
+        circleLayer.strokeEnd = CGFloat(duration/progress)
         
         // Add the circleLayer to the view's layer's sublayers
         layer.addSublayer(circleLayer)
     }
     
-    private func animateCircle(duration: NSTimeInterval) {
-        // We want to animate the strokeEnd property of the circleLayer
-        let animation = CABasicAnimation(keyPath: "strokeEnd")
+    
+    private func redrawStrokeEnd()
+    {
         
-        // Set the animation duration appropriately
-        animation.duration = duration
         
-        // Animate from 0 (no circle) to 1 (full circle)
-        animation.fromValue = 0
-        animation.toValue = 1
-        animation.delegate = self
-        // Do a linear animation (i.e. the speed of the animation stays the same)
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        
-        // Set the circleLayer's strokeEnd property to 1.0 now so that it's the
-        // right value when the animation ends.
-
-        circleLayer.strokeEnd = 1.0
-        
-        // Do the actual animation
-        circleLayer.addAnimation(animation, forKey: "animateCircle")
+        circleLayer.strokeEnd = CGFloat(duration/progress)
     }
     
-    private func resetAnimationCircle(){
-        
-        circleLayer.removeAllAnimations()
-        self.createProgressCircle()
-        self.isAnimating = false
-
+    
+    
+    
+    private func resetAnimationCircle()
+    {
+        stopTimer()
+        duration = 0
+        circleLayer.strokeEnd = 0
     }
     
     private func pauseLayer(layer : CALayer) {
@@ -430,10 +433,12 @@ class InteractivePlayerView : UIView {
     }
     
     private func stopTimer(){
+       
         if(timer != nil) {
             timer.invalidate()
             timer = nil
         }
+        
     }
     
     func updateTime(){
@@ -445,25 +450,21 @@ class InteractivePlayerView : UIView {
         
         timeLabel.text = NSString(format: "%i:%02i",min,sec ) as String
         
+        if(self.duration >= self.progress)
+        {
+            stopTimer()
+        }
+        
     }
     
     /* Start timer and animation */
     func start(){
-        if !self.isAnimating {
-            self.animateCircle(progress)
-            self.startTimer()
-        }else {
-            self.resumeLayer(circleLayer)
-            self.startTimer()
-        }
+        self.startTimer()
     }
     
     /* Stop timer and animation */
     func stop(){
-        if self.isAnimating {
-            self.pauseLayer(circleLayer)
-            self.stopTimer()
-        }
+       self.stopTimer()
     }
     
     func restartWithProgress(duration duration : Double){
@@ -473,3 +474,65 @@ class InteractivePlayerView : UIView {
     }
     
 }
+
+
+// MARK: - Gestures
+extension InteractivePlayerView
+{
+    
+    func addPanGesture()
+    {
+        let gesture:UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
+        gesture.maximumNumberOfTouches = 1
+        self.addGestureRecognizer(gesture)
+    }
+    
+    
+    func handlePanGesture(gesture:UIPanGestureRecognizer)
+    {
+        if(!self.panEnabled)
+        {
+            return;
+        }
+        
+        let translation:CGPoint = gesture.translationInView(self)
+      
+        
+        let xDirection:CGFloat  = translation.x
+        let yDirection:CGFloat =  -1 * translation.y
+        
+        let rate:CGFloat = yDirection+xDirection // rate of forward/backwards
+        
+        
+        
+        if(gesture.state == UIGestureRecognizerState.Began)
+        {
+            stopTimer()
+        }
+        else if(gesture.state == UIGestureRecognizerState.Changed)
+        {
+            duration += Double(rate/4)
+            
+            if(duration < 0 )
+            {
+                duration = 0
+            }
+            else if(duration >= progress)
+            {
+                duration = progress
+            }
+        }
+        else if(gesture.state == UIGestureRecognizerState.Ended)
+        {
+            startTimer()
+        }
+        
+        
+        gesture.setTranslation(CGPointZero, inView: self)
+    }
+    
+    
+}
+
+
+
