@@ -362,6 +362,7 @@ class InteractivePlayerView : UIView {
         
     }
     
+    
     private func createProgressCircle(){
         
        
