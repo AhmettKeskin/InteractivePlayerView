@@ -11,9 +11,19 @@
 import UIKit
 
 protocol InteractivePlayerViewDelegate {
+    
     func actionOneButtonTapped(sender : UIButton, isSelected : Bool)
     func actionTwoButtonTapped(sender : UIButton, isSelected : Bool)
     func actionThreeButtonTapped(sender : UIButton, isSelected : Bool)
+    
+    func interactivePlayerViewDidStartPlaying(playerInteractive:InteractivePlayerView)
+     func interactivePlayerViewDidStopPlaying(playerInteractive:InteractivePlayerView)
+    
+    
+    /**
+       @ callbacks in every changes at the duration
+     */
+    func interactivePlayerViewDidChangedDuration(playerInteractive:InteractivePlayerView , currentDuration:Double)
 }
 
 @IBDesignable
@@ -104,6 +114,11 @@ class InteractivePlayerView : UIView {
     private var duration : Double{
         didSet{
             redrawStrokeEnd()
+            
+            if let theDelegate = self.delegate {
+                theDelegate.interactivePlayerViewDidChangedDuration(self, currentDuration: duration)
+            }
+            
         }
     }
 
@@ -362,7 +377,7 @@ class InteractivePlayerView : UIView {
         
     }
     
-    //asd
+    
     private func createProgressCircle(){
         
        
@@ -398,8 +413,6 @@ class InteractivePlayerView : UIView {
     
     private func redrawStrokeEnd()
     {
-        
-        
         circleLayer.strokeEnd = CGFloat(duration/progress)
     }
     
@@ -431,6 +444,9 @@ class InteractivePlayerView : UIView {
     private func startTimer(){
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
 
+        if let theDelegate = self.delegate {
+            theDelegate.interactivePlayerViewDidStartPlaying(self)
+        }
     }
     
     private func stopTimer(){
@@ -438,6 +454,11 @@ class InteractivePlayerView : UIView {
         if(timer != nil) {
             timer.invalidate()
             timer = nil
+            
+            if let theDelegate = self.delegate {
+                theDelegate.interactivePlayerViewDidStopPlaying(self)
+            }
+            
         }
         
     }
