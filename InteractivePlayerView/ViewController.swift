@@ -79,6 +79,20 @@ class ViewController: UIViewController, InteractivePlayerViewDelegate {
 
     }
     
+    func interactivePlayerViewDidChangedDuration(playerInteractive: InteractivePlayerView, currentDuration: Double) {
+        print("current Duration : \(currentDuration)")
+    }
+    
+    func interactivePlayerViewDidStartPlaying(playerInteractive: InteractivePlayerView) {
+        print("interactive player did started")
+    }
+    
+    func interactivePlayerViewDidStopPlaying(playerInteractive: InteractivePlayerView) {
+        print("interactive player did stop")
+    }
+    
+    
+    
     func makeImageBlurry(imageView : UIImageView){
         
         //only apply the blur if the user hasn't disabled transparency effects

@@ -379,9 +379,6 @@ class InteractivePlayerView : UIView {
     
     
     private func createProgressCircle(){
-        
-       
-        
         let centerPoint = CGPointMake(CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds))
         let startAngle = CGFloat(M_PI_2)
         let endAngle = CGFloat(M_PI * 2 + M_PI_2)
@@ -391,7 +388,6 @@ class InteractivePlayerView : UIView {
         let circlePath = UIBezierPath(arcCenter:centerPoint, radius: CGRectGetWidth(frame)/2+5, startAngle:startAngle, endAngle:endAngle, clockwise: true).CGPath
         
         // Setup the CAShapeLayer with the path, colors, and line width
-
         circleLayer = CAShapeLayer()
         circleLayer.path = circlePath
         circleLayer.fillColor = UIColor.clearColor().CGColor
@@ -411,16 +407,11 @@ class InteractivePlayerView : UIView {
     }
     
     
-    private func redrawStrokeEnd()
-    {
+    private func redrawStrokeEnd(){
         circleLayer.strokeEnd = CGFloat(duration/progress)
     }
     
-    
-    
-    
-    private func resetAnimationCircle()
-    {
+    private func resetAnimationCircle(){
         stopTimer()
         duration = 0
         circleLayer.strokeEnd = 0
@@ -499,21 +490,17 @@ class InteractivePlayerView : UIView {
 
 
 // MARK: - Gestures
-extension InteractivePlayerView
-{
+extension InteractivePlayerView{
     
-    func addPanGesture()
-    {
+    func addPanGesture(){
         let gesture:UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
         gesture.maximumNumberOfTouches = 1
         self.addGestureRecognizer(gesture)
     }
     
     
-    func handlePanGesture(gesture:UIPanGestureRecognizer)
-    {
-        if(!self.panEnabled)
-        {
+    func handlePanGesture(gesture:UIPanGestureRecognizer){
+        if(!self.panEnabled){
             return;
         }
         
@@ -527,25 +514,20 @@ extension InteractivePlayerView
         
         
         
-        if(gesture.state == UIGestureRecognizerState.Began)
-        {
+        if(gesture.state == UIGestureRecognizerState.Began){
             stopTimer()
         }
-        else if(gesture.state == UIGestureRecognizerState.Changed)
-        {
+        else if(gesture.state == UIGestureRecognizerState.Changed){
             duration += Double(rate/4)
             
-            if(duration < 0 )
-            {
+            if(duration < 0 ){
                 duration = 0
             }
-            else if(duration >= progress)
-            {
+            else if(duration >= progress){
                 duration = progress
             }
         }
-        else if(gesture.state == UIGestureRecognizerState.Ended)
-        {
+        else if(gesture.state == UIGestureRecognizerState.Ended){
             startTimer()
         }
         
