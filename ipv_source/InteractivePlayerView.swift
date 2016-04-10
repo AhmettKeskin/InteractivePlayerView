@@ -433,7 +433,7 @@ class InteractivePlayerView : UIView {
     }
     
     private func startTimer(){
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(InteractivePlayerView.updateTime), userInfo: nil, repeats: true)
 
         if let theDelegate = self.delegate {
             theDelegate.interactivePlayerViewDidStartPlaying(self)
