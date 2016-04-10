@@ -483,7 +483,7 @@ class InteractivePlayerView : UIView {
     func restartWithProgress(duration duration : Double){
         progress = duration
         self.resetAnimationCircle()
-        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "start", userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(InteractivePlayerView.start), userInfo: nil, repeats: false)
     }
     
 }
@@ -493,7 +493,7 @@ class InteractivePlayerView : UIView {
 extension InteractivePlayerView{
     
     func addPanGesture(){
-        let gesture:UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
+        let gesture:UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(InteractivePlayerView.handlePanGesture(_:)))
         gesture.maximumNumberOfTouches = 1
         self.addGestureRecognizer(gesture)
     }
