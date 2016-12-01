@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kbo-wU-ome">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kbo-wU-ome">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,17 +15,13 @@
                         <viewControllerLayoutGuide type="bottom" id="32C-8h-nqq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="br5-ea-vKi">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3SD-QJ-Q0k">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagetest.png" translatesAutoresizingMaskIntoConstraints="NO" id="CkH-32-8BV">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
-                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blurbg" translatesAutoresizingMaskIntoConstraints="NO" id="CkH-32-8BV"/>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IpE-nB-jCE" customClass="InteractivePlayerView" customModule="InteractivePlayerView" customModuleProvider="target">
-                                        <rect key="frame" x="200" y="100" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="F9j-Kh-gGx"/>
                                             <constraint firstAttribute="width" constant="200" id="ufv-0G-mMi"/>
@@ -33,61 +30,57 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="buttonSizes">
                                                 <real key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="actionOne_icon_selected" value="shuffle_selected.png"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="actionOne_icon_unselected" value="shuffle_unselected.png"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="actionTwo_icon_selected" value="like_selected.png"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="actionTwo_icon_unselected" value="like_unselected.png"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="actionThree_icon_selected" value="replay_selected.png"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="actionThree_icon_unselected" value="replay_unselected.png"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="coverImage" value="imagetest.png"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="coverImage" value="imagetest"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="actionOne_icon_selected" value="shuffle_selected"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="actionOne_icon_unselected" value="shuffle_unselected"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="actionTwo_icon_selected" value="like_selected"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="actionTwo_icon_unselected" value="like_unselected"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="actionThree_icon_selected" value="replay_selected"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="actionThree_icon_unselected" value="replay_unselected"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wu-j3-uMa">
-                                        <rect key="frame" x="150" y="185" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="FYp-2a-9bc"/>
                                             <constraint firstAttribute="height" constant="30" id="gvP-lt-iJb"/>
                                         </constraints>
-                                        <state key="normal" image="icon_back.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="icon_back">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="previousTapped:" destination="kbo-wU-ome" eventType="touchUpInside" id="qNX-8V-xup"/>
+                                            <action selector="previousTappedWithSender:" destination="kbo-wU-ome" eventType="touchUpInside" id="R3r-tA-HqG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4V-tK-Sks">
-                                        <rect key="frame" x="420" y="185" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="KDC-LD-92b"/>
                                             <constraint firstAttribute="width" constant="30" id="cLv-qX-MJ5"/>
                                         </constraints>
-                                        <state key="normal" image="icon_forward.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="icon_forward">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="nextTapped:" destination="kbo-wU-ome" eventType="touchUpInside" id="H4k-EJ-3Tq"/>
+                                            <action selector="nextTappedWithSender:" destination="kbo-wU-ome" eventType="touchUpInside" id="mLL-iy-4jl"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retrograde" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pG3-yv-UKu">
-                                        <rect key="frame" x="40" y="42" width="520" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="mBw-o4-mh5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="James Blake - Overgrawn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q39-bn-q74">
-                                        <rect key="frame" x="40" y="63" width="520" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="nUk-FO-Hkh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="q39-bn-q74" firstAttribute="top" secondItem="pG3-yv-UKu" secondAttribute="bottom" id="99u-Dg-5Ow"/>
                                     <constraint firstAttribute="trailing" secondItem="q39-bn-q74" secondAttribute="trailing" constant="40" id="BWF-Tc-dW6"/>
@@ -116,34 +109,30 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VoE-8H-C6h">
-                                <rect key="frame" x="0.0" y="400" width="600" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="4Kr-yV-67r"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hrn-tl-c2E">
-                                <rect key="frame" x="520" y="370" width="60" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXm-VX-b7K">
-                                        <rect key="frame" x="15" y="15" width="30" height="30"/>
-                                        <state key="normal" image="play.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="play">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="playButtonTapped:" destination="kbo-wU-ome" eventType="touchUpInside" id="o2R-nu-PJA"/>
+                                            <action selector="playButtonTapped:" destination="kbo-wU-ome" eventType="touchUpInside" id="1AC-Tk-jd6"/>
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddB-2N-tO5">
-                                        <rect key="frame" x="15" y="15" width="30" height="30"/>
-                                        <state key="normal" image="pause.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="pause">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="pauseButtonTapped:" destination="kbo-wU-ome" eventType="touchUpInside" id="WM5-lo-ZuI"/>
+                                            <action selector="pauseButtonTapped:" destination="kbo-wU-ome" eventType="touchUpInside" id="jxw-fq-lxn"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="ddB-2N-tO5" firstAttribute="top" secondItem="Hrn-tl-c2E" secondAttribute="top" constant="15" id="1uo-6M-j3o"/>
                                     <constraint firstAttribute="trailing" secondItem="ddB-2N-tO5" secondAttribute="trailing" constant="15" id="2nS-kW-J2z"/>
@@ -158,7 +147,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="32C-8h-nqq" firstAttribute="top" secondItem="VoE-8H-C6h" secondAttribute="bottom" id="DRk-sF-oMC"/>
                             <constraint firstItem="3SD-QJ-Q0k" firstAttribute="leading" secondItem="br5-ea-vKi" secondAttribute="leading" id="Kjp-We-qjk"/>
@@ -174,7 +163,7 @@
                     <connections>
                         <outlet property="blurBgImage" destination="CkH-32-8BV" id="h1a-yy-0Gh"/>
                         <outlet property="containerView" destination="VoE-8H-C6h" id="P2b-uz-alu"/>
-                        <outlet property="ipv" destination="IpE-nB-jCE" id="WZH-hj-iis"/>
+                        <outlet property="ipv" destination="IpE-nB-jCE" id="GY4-Sz-wfC"/>
                         <outlet property="pauseButton" destination="ddB-2N-tO5" id="IRk-dw-5Cw"/>
                         <outlet property="playButton" destination="RXm-VX-b7K" id="96I-aR-Q07"/>
                         <outlet property="playPauseButtonView" destination="Hrn-tl-c2E" id="ivJ-tR-Q4D"/>
@@ -186,16 +175,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_back.png" width="256" height="256"/>
-        <image name="icon_forward.png" width="256" height="256"/>
-        <image name="imagetest.png" width="373" height="373"/>
-        <image name="like_selected.png" width="64" height="64"/>
-        <image name="like_unselected.png" width="64" height="64"/>
-        <image name="pause.png" width="64" height="64"/>
-        <image name="play.png" width="64" height="64"/>
-        <image name="replay_selected.png" width="64" height="64"/>
-        <image name="replay_unselected.png" width="64" height="64"/>
-        <image name="shuffle_selected.png" width="79" height="79"/>
-        <image name="shuffle_unselected.png" width="79" height="79"/>
+        <image name="blurbg" width="1110" height="1094"/>
+        <image name="icon_back" width="256" height="256"/>
+        <image name="icon_forward" width="256" height="256"/>
+        <image name="imagetest" width="373" height="373"/>
+        <image name="like_selected" width="64" height="64"/>
+        <image name="like_unselected" width="64" height="64"/>
+        <image name="pause" width="64" height="64"/>
+        <image name="play" width="64" height="64"/>
+        <image name="replay_selected" width="64" height="64"/>
+        <image name="replay_unselected" width="64" height="64"/>
+        <image name="shuffle_selected" width="79" height="79"/>
+        <image name="shuffle_unselected" width="79" height="79"/>
     </resources>
 </document>

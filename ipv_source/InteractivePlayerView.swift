@@ -17,7 +17,7 @@ protocol InteractivePlayerViewDelegate {
     func actionThreeButtonTapped(sender : UIButton, isSelected : Bool)
     
     func interactivePlayerViewDidStartPlaying(playerInteractive:InteractivePlayerView)
-     func interactivePlayerViewDidStopPlaying(playerInteractive:InteractivePlayerView)
+    func interactivePlayerViewDidStopPlaying(playerInteractive:InteractivePlayerView)
     
     
     /**
@@ -54,8 +54,8 @@ class InteractivePlayerView : UIView {
     var actionImages = ActionButtonImages()
     
     /// set progress colors
-    var progressEmptyColor : UIColor = UIColor.whiteColor()
-    var progressFullColor : UIColor = UIColor.redColor()
+    var progressEmptyColor : UIColor = UIColor.white
+    var progressFullColor : UIColor = UIColor.red
     
     /// used to change current time of the sound . default is true
     var panEnabled:Bool = true
@@ -66,11 +66,11 @@ class InteractivePlayerView : UIView {
         didSet {
             
             if isActionOneSelected {
-                self.actionOne.selected = true
-                self.actionOne.setImage(self.actionImages.actionOneSelected, forState: UIControlState.Selected)
+                self.actionOne.isSelected = true
+                self.actionOne.setImage(self.actionImages.actionOneSelected, for: UIControlState.selected)
             }else {
-                self.actionOne.selected = false
-                self.actionOne.setImage(self.actionImages.actionOneUnSelected, forState: UIControlState.Normal)
+                self.actionOne.isSelected = false
+                self.actionOne.setImage(self.actionImages.actionOneUnSelected, for: UIControlState.normal)
             }
         }
     }
@@ -80,11 +80,11 @@ class InteractivePlayerView : UIView {
         
         didSet {
             if isActionTwoSelected {
-                self.actionTwo.selected = true
-                self.actionTwo.setImage(self.actionImages.actionTwoSelected, forState: UIControlState.Selected)
+                self.actionTwo.isSelected = true
+                self.actionTwo.setImage(self.actionImages.actionTwoSelected, for: UIControlState.selected)
             }else {
-                self.actionTwo.selected = false
-                self.actionTwo.setImage(self.actionImages.actionTwoUnSelected, forState: UIControlState.Normal)
+                self.actionTwo.isSelected = false
+                self.actionTwo.setImage(self.actionImages.actionTwoUnSelected, for: UIControlState.normal)
             }
         }
     }
@@ -94,18 +94,18 @@ class InteractivePlayerView : UIView {
         
         didSet {
             if isActionThreeSelected {
-                self.actionThree.selected = true
-                self.actionThree.setImage(self.actionImages.actionThreeSelected, forState: UIControlState.Selected)
+                self.actionThree.isSelected = true
+                self.actionThree.setImage(self.actionImages.actionThreeSelected, for: UIControlState.selected)
             }else {
-                self.actionThree.selected = false
-                self.actionThree.setImage(self.actionImages.actionThreeUnSelected, forState: UIControlState.Normal)
+                self.actionThree.isSelected = false
+                self.actionThree.setImage(self.actionImages.actionThreeUnSelected, for: UIControlState.normal)
             }
         }
     }
     
     
     /* Timer for update time*/
-    private var timer: NSTimer!
+    private var timer: Timer!
     
     /* Controlling progress bar animation with isAnimating */
     private var isAnimating : Bool = false
@@ -116,7 +116,7 @@ class InteractivePlayerView : UIView {
             redrawStrokeEnd()
             
             if let theDelegate = self.delegate {
-                theDelegate.interactivePlayerViewDidChangedDuration(self, currentDuration: duration)
+                theDelegate.interactivePlayerViewDidChangedDuration(playerInteractive: self, currentDuration: duration)
             }
             
         }
@@ -157,7 +157,7 @@ class InteractivePlayerView : UIView {
             return actionImages.actionOneSelected
         }
         set(actionOne_icon_selected) {
-            actionOne.setImage(actionOne_icon_selected, forState: UIControlState.Selected)
+            actionOne.setImage(actionOne_icon_selected, for: UIControlState.selected)
             actionImages.actionOneSelected = actionOne_icon_selected
         }
     }
@@ -168,7 +168,7 @@ class InteractivePlayerView : UIView {
             return actionImages.actionOneUnSelected
         }
         set(actionOne_icon_unselected) {
-            actionOne.setImage(actionOne_icon_unselected, forState: UIControlState.Normal)
+            actionOne.setImage(actionOne_icon_unselected, for: UIControlState.normal)
             actionImages.actionOneUnSelected = actionOne_icon_unselected
         }
     }
@@ -179,7 +179,7 @@ class InteractivePlayerView : UIView {
             return actionImages.actionTwoSelected
         }
         set(actionTwo_icon_selected) {
-            actionTwo.setImage(actionTwo_icon_selected, forState: UIControlState.Selected)
+            actionTwo.setImage(actionTwo_icon_selected, for: UIControlState.selected)
             actionImages.actionTwoSelected = actionTwo_icon_selected
         }
     }
@@ -190,7 +190,7 @@ class InteractivePlayerView : UIView {
             return actionImages.actionTwoUnSelected
         }
         set(actionTwo_icon_unselected) {
-            actionTwo.setImage(actionTwo_icon_unselected, forState: UIControlState.Normal)
+            actionTwo.setImage(actionTwo_icon_unselected, for: UIControlState.normal)
             actionImages.actionTwoUnSelected = actionTwo_icon_unselected
         }
     }
@@ -201,7 +201,7 @@ class InteractivePlayerView : UIView {
             return actionImages.actionThreeSelected
         }
         set(actionThree_icon_selected) {
-            actionThree.setImage(actionThree_icon_selected, forState: UIControlState.Selected)
+            actionThree.setImage(actionThree_icon_selected, for: UIControlState.selected)
             actionImages.actionThreeSelected = actionThree_icon_selected
         }
     }
@@ -212,7 +212,7 @@ class InteractivePlayerView : UIView {
             return actionImages.actionThreeUnSelected
         }
         set(actionThree_icon_unselected) {
-            actionThree.setImage(actionThree_icon_unselected, forState: UIControlState.Normal)
+            actionThree.setImage(actionThree_icon_unselected, for: UIControlState.normal)
             actionImages.actionThreeUnSelected = actionThree_icon_unselected
         }
     }
@@ -244,77 +244,77 @@ class InteractivePlayerView : UIView {
     
     required init?(coder aDecoder: NSCoder) {
       
-           self.duration = 0
+        self.duration = 0
         
         super.init(coder: aDecoder)
         self.createUI()
-         self.addPanGesture()
+        self.addPanGesture()
        
     }
     
     @IBAction private func actionOneButtonTapped(sender: UIButton) {
         
-        if sender.selected {
-            sender.selected = false
+        if sender.isSelected {
+            sender.isSelected = false
         }else {
-            sender.selected = true
+            sender.isSelected = true
         }
         
-        self.isActionOneSelected = sender.selected
+        self.isActionOneSelected = sender.isSelected
         
         if let delegate = self.delegate{
-            delegate.actionOneButtonTapped(sender, isSelected : sender.selected)
+            delegate.actionOneButtonTapped(sender: sender, isSelected : sender.isSelected)
         }
     }
     
     @IBAction private func actionTwoButtonTapped(sender: UIButton) {
 
-        if sender.selected {
-            sender.selected = false
+        if sender.isSelected {
+            sender.isSelected = false
         } else {
-            sender.selected = true
+            sender.isSelected = true
         }
 
-        self.isActionTwoSelected = sender.selected
+        self.isActionTwoSelected = sender.isSelected
         
         if let delegate = self.delegate{
-            delegate.actionTwoButtonTapped(sender, isSelected : sender.selected)
+            delegate.actionTwoButtonTapped(sender: sender, isSelected : sender.isSelected)
         }
     }
     
     @IBAction private func actionThreeButtonTapped(sender: UIButton) {
         
-        if sender.selected {
-            sender.selected = false
+        if sender.isSelected {
+            sender.isSelected = false
         }else {
-            sender.selected = true
+            sender.isSelected = true
         }
         
-        self.isActionThreeSelected = sender.selected
+        self.isActionThreeSelected = sender.isSelected
         
         if let delegate = self.delegate{
-            delegate.actionThreeButtonTapped(sender, isSelected : sender.selected)
+            delegate.actionThreeButtonTapped(sender: sender, isSelected : sender.isSelected)
         }
     }
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
-        self.addCirle(self.bounds.width + 10, capRadius: 2.0, color: self.progressEmptyColor,strokeStart: 0.0,strokeEnd: 1.0)
+        self.addCirle(arcRadius: self.bounds.width + 10, capRadius: 2.0, color: self.progressEmptyColor,strokeStart: 0.0,strokeEnd: 1.0)
         self.createProgressCircle()
         
     }
     
-    override func animationDidStart(anim: CAAnimation) {
+    func animationDidStart(anim: CAAnimation) {
 
-        circleLayer.strokeColor = self.progressFullColor.CGColor
+        circleLayer.strokeColor = self.progressFullColor.cgColor
         self.isAnimating = true
         self.duration = 0
     }
     
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+    func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         
         self.isAnimating = false
-        circleLayer.strokeColor = UIColor.clearColor().CGColor
+        circleLayer.strokeColor = UIColor.clear.cgColor
         
         if(timer != nil) {
             timer.invalidate()
@@ -323,31 +323,32 @@ class InteractivePlayerView : UIView {
     }
     
     private func createUI() {
+        self.layoutIfNeeded()
         view = loadViewFromNib()
         view.frame = bounds
-        view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
-        coverImageView.backgroundColor = UIColor.clearColor()
-        view.backgroundColor = UIColor.clearColor()
+        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        coverImageView.backgroundColor = UIColor.clear
+        view.backgroundColor = UIColor.clear
         
-        self.makeItRounded(view, newSize: view.bounds.width)
-        self.backgroundColor = UIColor.clearColor()
+        self.makeItRounded(view: view, newSize: view.bounds.width)
+        self.backgroundColor = UIColor.clear
         
         addSubview(view)
     }
     
     private func loadViewFromNib() -> UIView {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "InteractivePlayerView", bundle: bundle)
         
         // Assumes UIView is top level and only object in CustomView.xib file
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
 
         return view
     }
     
     private func makeItRounded(view : UIView!, newSize : CGFloat!){
         let saveCenter : CGPoint = view.center
-        let newFrame : CGRect = CGRectMake(view.frame.origin.x, view.frame.origin.y, newSize, newSize)
+        let newFrame : CGRect = CGRect(x: view.frame.origin.x,y: view.frame.origin.y,width: newSize,height: newSize)
         view.frame = newFrame
         view.layer.cornerRadius = newSize / 2.0
         view.clipsToBounds = true
@@ -356,48 +357,48 @@ class InteractivePlayerView : UIView {
     
     private func addCirle(arcRadius: CGFloat, capRadius: CGFloat, color: UIColor, strokeStart : CGFloat, strokeEnd : CGFloat) {
 
-        let centerPoint = CGPointMake(CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds))
+        let centerPoint = CGPoint(x: self.bounds.midX ,y: self.bounds.midY)
         let startAngle = CGFloat(M_PI_2)
         let endAngle = CGFloat(M_PI * 2 + M_PI_2)
         
-        let path = UIBezierPath(arcCenter:centerPoint, radius: CGRectGetWidth(frame)/2+5, startAngle:startAngle, endAngle:endAngle, clockwise: true).CGPath
+        let path = UIBezierPath(arcCenter:centerPoint, radius: frame.width/2+5, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath
         
         let arc = CAShapeLayer()
         arc.lineWidth = 2
         arc.path = path
         arc.strokeStart = strokeStart
         arc.strokeEnd = strokeEnd
-        arc.strokeColor = color.CGColor
-        arc.fillColor = UIColor.clearColor().CGColor
-        arc.shadowColor = UIColor.blackColor().CGColor
+        arc.strokeColor = color.cgColor
+        arc.fillColor = UIColor.clear.cgColor
+        arc.shadowColor = UIColor.black.cgColor
         arc.shadowRadius = 0
         arc.shadowOpacity = 0
-        arc.shadowOffset = CGSizeZero
+        arc.shadowOffset = CGSize.zero
         layer.addSublayer(arc)
         
     }
     
     
     private func createProgressCircle(){
-        let centerPoint = CGPointMake(CGRectGetMidX(self.bounds) , CGRectGetMidY(self.bounds))
+        let centerPoint = CGPoint(x: self.bounds.midX ,y: self.bounds.midY)
         let startAngle = CGFloat(M_PI_2)
         let endAngle = CGFloat(M_PI * 2 + M_PI_2)
         
         // Use UIBezierPath as an easy way to create the CGPath for the layer.
         // The path should be the entire circle.
-        let circlePath = UIBezierPath(arcCenter:centerPoint, radius: CGRectGetWidth(frame)/2+5, startAngle:startAngle, endAngle:endAngle, clockwise: true).CGPath
+        let circlePath = UIBezierPath(arcCenter:centerPoint, radius: frame.width/2+5, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath
         
         // Setup the CAShapeLayer with the path, colors, and line width
         circleLayer = CAShapeLayer()
         circleLayer.path = circlePath
-        circleLayer.fillColor = UIColor.clearColor().CGColor
-        circleLayer.shadowColor = UIColor.blackColor().CGColor
-        circleLayer.strokeColor = self.progressFullColor.CGColor
+        circleLayer.fillColor = UIColor.clear.cgColor
+        circleLayer.shadowColor = UIColor.black.cgColor
+        circleLayer.strokeColor = self.progressFullColor.cgColor
         circleLayer.lineWidth = 2.0;
         circleLayer.strokeStart = 0.0
         circleLayer.shadowRadius = 0
         circleLayer.shadowOpacity = 0
-        circleLayer.shadowOffset = CGSizeZero
+        circleLayer.shadowOffset = CGSize.zero
         
         // draw the colorful , nice progress circle
         circleLayer.strokeEnd = CGFloat(duration/progress)
@@ -418,7 +419,7 @@ class InteractivePlayerView : UIView {
     }
     
     private func pauseLayer(layer : CALayer) {
-        let pauseTime = layer.convertTime(CACurrentMediaTime(), fromLayer: nil)
+        let pauseTime = layer.convertTime(CACurrentMediaTime(), from: nil)
         layer.speed = 0.0
         layer.timeOffset = pauseTime
     }
@@ -428,15 +429,15 @@ class InteractivePlayerView : UIView {
         layer.speed = 1.0
         layer.timeOffset = 0.0
         layer.beginTime = 0.0
-        let timeSincePause = layer.convertTime(CACurrentMediaTime(), fromLayer: nil) - pausedTime
+        let timeSincePause = layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
         layer.beginTime = timeSincePause
     }
     
     private func startTimer(){
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(InteractivePlayerView.updateTime), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(InteractivePlayerView.updateTime), userInfo: nil, repeats: true)
 
         if let theDelegate = self.delegate {
-            theDelegate.interactivePlayerViewDidStartPlaying(self)
+            theDelegate.interactivePlayerViewDidStartPlaying(playerInteractive: self)
         }
     }
     
@@ -447,7 +448,7 @@ class InteractivePlayerView : UIView {
             timer = nil
             
             if let theDelegate = self.delegate {
-                theDelegate.interactivePlayerViewDidStopPlaying(self)
+                theDelegate.interactivePlayerViewDidStopPlaying(playerInteractive: self)
             }
             
         }
@@ -480,32 +481,26 @@ class InteractivePlayerView : UIView {
        self.stopTimer()
     }
     
-    func restartWithProgress(duration duration : Double){
+    func restartWithProgress(duration : Double){
         progress = duration
         self.resetAnimationCircle()
-        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(InteractivePlayerView.start), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(InteractivePlayerView.start), userInfo: nil, repeats: false)
     }
     
-}
-
-
-// MARK: - Gestures
-extension InteractivePlayerView{
-    
+    // MARK: - Gestures
     func addPanGesture(){
-        let gesture:UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(InteractivePlayerView.handlePanGesture(_:)))
+        let gesture:UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(InteractivePlayerView.handlePanGesture))
         gesture.maximumNumberOfTouches = 1
         self.addGestureRecognizer(gesture)
     }
-    
     
     func handlePanGesture(gesture:UIPanGestureRecognizer){
         if(!self.panEnabled){
             return;
         }
         
-        let translation:CGPoint = gesture.translationInView(self)
-      
+        let translation:CGPoint = gesture.translation(in: self)
+        
         
         let xDirection:CGFloat  = translation.x
         let yDirection:CGFloat =  -1 * translation.y
@@ -514,27 +509,26 @@ extension InteractivePlayerView{
         
         
         
-        if(gesture.state == UIGestureRecognizerState.Began){
-            stopTimer()
+        if(gesture.state == UIGestureRecognizerState.began){
+            self.stopTimer()
         }
-        else if(gesture.state == UIGestureRecognizerState.Changed){
-            duration += Double(rate/4)
+        else if(gesture.state == UIGestureRecognizerState.changed){
+            self.duration += Double(rate/4)
             
-            if(duration < 0 ){
-                duration = 0
+            if(self.duration < 0 ){
+                self.duration = 0
             }
-            else if(duration >= progress){
-                duration = progress
+            else if(self.duration >= progress){
+                self.duration = progress
             }
         }
-        else if(gesture.state == UIGestureRecognizerState.Ended){
-            startTimer()
+        else if(gesture.state == UIGestureRecognizerState.ended){
+            self.startTimer()
         }
         
         
-        gesture.setTranslation(CGPointZero, inView: self)
+        gesture.setTranslation(CGPoint.zero, in: self)
     }
-    
     
 }
 

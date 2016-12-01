@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InteractivePlayerView" customModule="InteractivePlayerView" customModuleProvider="target">
             <connections>
-                <outlet property="actionOne" destination="C8r-8c-9W8" id="q2s-Zh-5L0"/>
-                <outlet property="actionOneButtonHeight" destination="wUW-rZ-pGC" id="1eX-BR-xTG"/>
-                <outlet property="actionOneButtonWidth" destination="NvD-ps-syk" id="MUF-Wf-zSA"/>
-                <outlet property="actionThree" destination="I7s-9w-s53" id="OIZ-43-eRy"/>
-                <outlet property="actionThreeButtonHeight" destination="tqc-Gb-h0N" id="ymd-Zf-1Uj"/>
-                <outlet property="actionThreeButtonWidth" destination="Q9E-8x-Uh3" id="Qqm-aG-qU1"/>
-                <outlet property="actionTwo" destination="9qR-6p-blL" id="8VS-gs-7Cs"/>
-                <outlet property="actionTwoButtonHeight" destination="Qih-96-yFi" id="i4A-a3-SCc"/>
-                <outlet property="actionTwoButtonWidth" destination="Mzt-ov-c3g" id="Fmf-kl-9Fb"/>
-                <outlet property="coverImageView" destination="Skm-sd-xmf" id="SQv-XR-8tZ"/>
-                <outlet property="timeLabel" destination="Rfw-3d-vwp" id="REh-6k-Yb6"/>
+                <outlet property="actionOne" destination="C8r-8c-9W8" id="hvk-AQ-Ven"/>
+                <outlet property="actionOneButtonHeight" destination="wUW-rZ-pGC" id="nXl-rg-JbC"/>
+                <outlet property="actionOneButtonWidth" destination="NvD-ps-syk" id="tAD-VG-rn8"/>
+                <outlet property="actionThree" destination="I7s-9w-s53" id="Wip-NX-sjY"/>
+                <outlet property="actionThreeButtonHeight" destination="tqc-Gb-h0N" id="lBm-Kx-EM6"/>
+                <outlet property="actionThreeButtonWidth" destination="Q9E-8x-Uh3" id="jZC-Wt-mfl"/>
+                <outlet property="actionTwo" destination="9qR-6p-blL" id="LN3-Rh-Fzj"/>
+                <outlet property="actionTwoButtonHeight" destination="Qih-96-yFi" id="mtc-pC-Ced"/>
+                <outlet property="actionTwoButtonWidth" destination="Mzt-ov-c3g" id="xDS-EJ-l3w"/>
+                <outlet property="coverImageView" destination="Skm-sd-xmf" id="WLc-2e-Fze"/>
+                <outlet property="timeLabel" destination="Rfw-3d-vwp" id="uwe-sK-EIJ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -25,55 +26,49 @@
             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Skm-sd-xmf">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Skm-sd-xmf"/>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfw-3d-vwp">
-                    <rect key="frame" x="8" y="79" width="184" height="42"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="zQG-xj-8Ie"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8r-8c-9W8">
-                    <rect key="frame" x="62" y="129" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="NvD-ps-syk"/>
                         <constraint firstAttribute="height" constant="20" id="wUW-rZ-pGC"/>
                     </constraints>
                     <state key="normal">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
-                        <action selector="actionOneButtonTapped:" destination="-1" eventType="touchUpInside" id="6U8-dA-xwu"/>
+                        <action selector="actionOneButtonTappedWithSender:" destination="-1" eventType="touchUpInside" id="cPU-vD-lqH"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qR-6p-blL">
-                    <rect key="frame" x="90" y="129" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="Mzt-ov-c3g"/>
                         <constraint firstAttribute="height" constant="20" id="Qih-96-yFi"/>
                     </constraints>
                     <state key="normal">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
-                        <action selector="actionTwoButtonTapped:" destination="-1" eventType="touchUpInside" id="t5G-b7-Tnb"/>
+                        <action selector="actionTwoButtonTappedWithSender:" destination="-1" eventType="touchUpInside" id="vNH-O2-lyX"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7s-9w-s53">
-                    <rect key="frame" x="118" y="129" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="Q9E-8x-Uh3"/>
                         <constraint firstAttribute="height" constant="20" id="tqc-Gb-h0N"/>
                     </constraints>
                     <state key="normal">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
-                        <action selector="actionThreeButtonTapped:" destination="-1" eventType="touchUpInside" id="m65-Cr-THO"/>
+                        <action selector="actionThreeButtonTappedWithSender:" destination="-1" eventType="touchUpInside" id="OsI-fB-wkT"/>
                     </connections>
                 </button>
             </subviews>
@@ -95,7 +90,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="259" y="101"/>
+            <point key="canvasLocation" x="-163" y="40"/>
         </view>
     </objects>
 </document>

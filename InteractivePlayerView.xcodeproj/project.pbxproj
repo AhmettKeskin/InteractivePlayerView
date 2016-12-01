@@ -14,20 +14,6 @@
 		59B836241B7DF1F6007E1290 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59B836231B7DF1F6007E1290 /* Images.xcassets */; };
 		59B836271B7DF1F6007E1290 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B836251B7DF1F6007E1290 /* LaunchScreen.xib */; };
 		59B836331B7DF1F6007E1290 /* InteractivePlayerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B836321B7DF1F6007E1290 /* InteractivePlayerViewTests.swift */; };
-		59D610A81BA8265800CC59A9 /* blurbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D6109A1BA8265800CC59A9 /* blurbg.png */; };
-		59D610A91BA8265800CC59A9 /* icon_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D6109B1BA8265800CC59A9 /* icon_arrow_down.png */; };
-		59D610AA1BA8265800CC59A9 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D6109C1BA8265800CC59A9 /* icon_back.png */; };
-		59D610AB1BA8265800CC59A9 /* icon_forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D6109D1BA8265800CC59A9 /* icon_forward.png */; };
-		59D610AC1BA8265800CC59A9 /* icon_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D6109E1BA8265800CC59A9 /* icon_share.png */; };
-		59D610AD1BA8265800CC59A9 /* imagetest.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D6109F1BA8265800CC59A9 /* imagetest.png */; };
-		59D610AE1BA8265800CC59A9 /* like_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D610A01BA8265800CC59A9 /* like_selected.png */; };
-		59D610AF1BA8265800CC59A9 /* like_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D610A11BA8265800CC59A9 /* like_unselected.png */; };
-		59D610B01BA8265800CC59A9 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D610A21BA8265800CC59A9 /* pause.png */; };
-		59D610B11BA8265800CC59A9 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D610A31BA8265800CC59A9 /* play.png */; };
-		59D610B21BA8265800CC59A9 /* replay_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D610A41BA8265800CC59A9 /* replay_selected.png */; };
-		59D610B31BA8265800CC59A9 /* replay_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D610A51BA8265800CC59A9 /* replay_unselected.png */; };
-		59D610B41BA8265800CC59A9 /* shuffle_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D610A61BA8265800CC59A9 /* shuffle_selected.png */; };
-		59D610B51BA8265800CC59A9 /* shuffle_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D610A71BA8265800CC59A9 /* shuffle_unselected.png */; };
 		59D610B81BA8271200CC59A9 /* InteractivePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D610B61BA8271200CC59A9 /* InteractivePlayerView.swift */; };
 		59D610B91BA8271200CC59A9 /* InteractivePlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59D610B71BA8271200CC59A9 /* InteractivePlayerView.xib */; };
 /* End PBXBuildFile section */
@@ -54,20 +40,6 @@
 		59B8362C1B7DF1F6007E1290 /* InteractivePlayerViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InteractivePlayerViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59B836311B7DF1F6007E1290 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59B836321B7DF1F6007E1290 /* InteractivePlayerViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractivePlayerViewTests.swift; sourceTree = "<group>"; };
-		59D6109A1BA8265800CC59A9 /* blurbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blurbg.png; path = InteractivePlayerView/icons/blurbg.png; sourceTree = SOURCE_ROOT; };
-		59D6109B1BA8265800CC59A9 /* icon_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_arrow_down.png; path = InteractivePlayerView/icons/icon_arrow_down.png; sourceTree = SOURCE_ROOT; };
-		59D6109C1BA8265800CC59A9 /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_back.png; path = InteractivePlayerView/icons/icon_back.png; sourceTree = SOURCE_ROOT; };
-		59D6109D1BA8265800CC59A9 /* icon_forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_forward.png; path = InteractivePlayerView/icons/icon_forward.png; sourceTree = SOURCE_ROOT; };
-		59D6109E1BA8265800CC59A9 /* icon_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_share.png; path = InteractivePlayerView/icons/icon_share.png; sourceTree = SOURCE_ROOT; };
-		59D6109F1BA8265800CC59A9 /* imagetest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = imagetest.png; path = InteractivePlayerView/icons/imagetest.png; sourceTree = SOURCE_ROOT; };
-		59D610A01BA8265800CC59A9 /* like_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = like_selected.png; path = InteractivePlayerView/icons/like_selected.png; sourceTree = SOURCE_ROOT; };
-		59D610A11BA8265800CC59A9 /* like_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = like_unselected.png; path = InteractivePlayerView/icons/like_unselected.png; sourceTree = SOURCE_ROOT; };
-		59D610A21BA8265800CC59A9 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = InteractivePlayerView/icons/pause.png; sourceTree = SOURCE_ROOT; };
-		59D610A31BA8265800CC59A9 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = InteractivePlayerView/icons/play.png; sourceTree = SOURCE_ROOT; };
-		59D610A41BA8265800CC59A9 /* replay_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = replay_selected.png; path = InteractivePlayerView/icons/replay_selected.png; sourceTree = SOURCE_ROOT; };
-		59D610A51BA8265800CC59A9 /* replay_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = replay_unselected.png; path = InteractivePlayerView/icons/replay_unselected.png; sourceTree = SOURCE_ROOT; };
-		59D610A61BA8265800CC59A9 /* shuffle_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shuffle_selected.png; path = InteractivePlayerView/icons/shuffle_selected.png; sourceTree = SOURCE_ROOT; };
-		59D610A71BA8265800CC59A9 /* shuffle_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shuffle_unselected.png; path = InteractivePlayerView/icons/shuffle_unselected.png; sourceTree = SOURCE_ROOT; };
 		59D610B61BA8271200CC59A9 /* InteractivePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractivePlayerView.swift; sourceTree = "<group>"; };
 		59D610B71BA8271200CC59A9 /* InteractivePlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InteractivePlayerView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,28 +62,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5914D73F1B83535400B344E0 /* icons */ = {
-			isa = PBXGroup;
-			children = (
-				59D6109A1BA8265800CC59A9 /* blurbg.png */,
-				59D6109B1BA8265800CC59A9 /* icon_arrow_down.png */,
-				59D6109C1BA8265800CC59A9 /* icon_back.png */,
-				59D6109D1BA8265800CC59A9 /* icon_forward.png */,
-				59D6109E1BA8265800CC59A9 /* icon_share.png */,
-				59D6109F1BA8265800CC59A9 /* imagetest.png */,
-				59D610A01BA8265800CC59A9 /* like_selected.png */,
-				59D610A11BA8265800CC59A9 /* like_unselected.png */,
-				59D610A21BA8265800CC59A9 /* pause.png */,
-				59D610A31BA8265800CC59A9 /* play.png */,
-				59D610A41BA8265800CC59A9 /* replay_selected.png */,
-				59D610A51BA8265800CC59A9 /* replay_unselected.png */,
-				59D610A61BA8265800CC59A9 /* shuffle_selected.png */,
-				59D610A71BA8265800CC59A9 /* shuffle_unselected.png */,
-			);
-			name = icons;
-			path = InteractivePlayerView/icons;
-			sourceTree = "<group>";
-		};
 		59B8360E1B7DF1F6007E1290 = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +88,6 @@
 				59B836201B7DF1F6007E1290 /* Main.storyboard */,
 				59B836231B7DF1F6007E1290 /* Images.xcassets */,
 				59B836251B7DF1F6007E1290 /* LaunchScreen.xib */,
-				5914D73F1B83535400B344E0 /* icons */,
 				59B8361A1B7DF1F6007E1290 /* Supporting Files */,
 				59B8363E1B7E1148007E1290 /* ipv_source */,
 			);
@@ -227,14 +176,18 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Mobiwise;
 				TargetAttributes = {
 					59B836161B7DF1F6007E1290 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 89QENA8827;
+						LastSwiftMigration = 0800;
 					};
 					59B8362B1B7DF1F6007E1290 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 89QENA8827;
+						LastSwiftMigration = 0800;
 						TestTargetID = 59B836161B7DF1F6007E1290;
 					};
 				};
@@ -263,23 +216,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59D610B51BA8265800CC59A9 /* shuffle_unselected.png in Resources */,
 				59D610B91BA8271200CC59A9 /* InteractivePlayerView.xib in Resources */,
-				59D610B31BA8265800CC59A9 /* replay_unselected.png in Resources */,
-				59D610AA1BA8265800CC59A9 /* icon_back.png in Resources */,
-				59D610AC1BA8265800CC59A9 /* icon_share.png in Resources */,
-				59D610AB1BA8265800CC59A9 /* icon_forward.png in Resources */,
-				59D610A91BA8265800CC59A9 /* icon_arrow_down.png in Resources */,
-				59D610A81BA8265800CC59A9 /* blurbg.png in Resources */,
-				59D610AD1BA8265800CC59A9 /* imagetest.png in Resources */,
 				59B836221B7DF1F6007E1290 /* Main.storyboard in Resources */,
 				59B836271B7DF1F6007E1290 /* LaunchScreen.xib in Resources */,
-				59D610AF1BA8265800CC59A9 /* like_unselected.png in Resources */,
-				59D610B01BA8265800CC59A9 /* pause.png in Resources */,
-				59D610B41BA8265800CC59A9 /* shuffle_selected.png in Resources */,
-				59D610B21BA8265800CC59A9 /* replay_selected.png in Resources */,
-				59D610B11BA8265800CC59A9 /* play.png in Resources */,
-				59D610AE1BA8265800CC59A9 /* like_selected.png in Resources */,
 				598B5DCC1BA218A20058EC5D /* Screen.png in Resources */,
 				59B836241B7DF1F6007E1290 /* Images.xcassets in Resources */,
 			);
@@ -356,14 +295,17 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -401,8 +343,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -421,6 +365,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -430,9 +375,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 89QENA8827;
 				INFOPLIST_FILE = InteractivePlayerView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.mobiwise.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -440,9 +389,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 89QENA8827;
 				INFOPLIST_FILE = InteractivePlayerView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.mobiwise.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -450,6 +403,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 89QENA8827;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -460,7 +414,9 @@
 				);
 				INFOPLIST_FILE = InteractivePlayerViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.mobiwise.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InteractivePlayerView.app/InteractivePlayerView";
 			};
 			name = Debug;
@@ -469,13 +425,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 89QENA8827;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = InteractivePlayerViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.mobiwise.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InteractivePlayerView.app/InteractivePlayerView";
 			};
 			name = Release;
