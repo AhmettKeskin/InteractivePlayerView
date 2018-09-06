@@ -15,17 +15,17 @@ InteractivePlayerView is an IBDesignableView (Custom View) which has its own pro
 
 ## Requirements
 
-- iOS 8.0+
-- Xcode 8.0+
-- Swift 3.0+
+- iOS 9.0+
+- Xcode 9.0+
+- Swift 4.0+
 
 #### Cocoapods
 
 ```swift
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
-pod 'InteractivePlayerView', '2.0'
+pod 'InteractivePlayerView', '3.0'
 ```
 ## Usage
 - Add your view in storyboard
