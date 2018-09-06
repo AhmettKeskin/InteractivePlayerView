@@ -358,8 +358,8 @@ class InteractivePlayerView : UIView {
     private func addCirle(arcRadius: CGFloat, capRadius: CGFloat, color: UIColor, strokeStart : CGFloat, strokeEnd : CGFloat) {
 
         let centerPoint = CGPoint(x: self.bounds.midX ,y: self.bounds.midY)
-        let startAngle = CGFloat(M_PI_2)
-        let endAngle = CGFloat(M_PI * 2 + M_PI_2)
+        let startAngle = CGFloat(Double.pi/2)
+        let endAngle = CGFloat(Double.pi * 2 + Double.pi/2)
         
         let path = UIBezierPath(arcCenter:centerPoint, radius: frame.width/2+5, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath
         
@@ -381,8 +381,8 @@ class InteractivePlayerView : UIView {
     
     private func createProgressCircle(){
         let centerPoint = CGPoint(x: self.bounds.midX ,y: self.bounds.midY)
-        let startAngle = CGFloat(M_PI_2)
-        let endAngle = CGFloat(M_PI * 2 + M_PI_2)
+        let startAngle = CGFloat(Double.pi/2)
+        let endAngle = CGFloat(Double.pi * 2 + Double.pi/2)
         
         // Use UIBezierPath as an easy way to create the CGPath for the layer.
         // The path should be the entire circle.
@@ -455,7 +455,7 @@ class InteractivePlayerView : UIView {
         
     }
     
-    func updateTime(){
+    @objc func updateTime(){
         
         self.duration += 0.1
         let totalDuration = Int(self.duration)
@@ -472,7 +472,7 @@ class InteractivePlayerView : UIView {
     }
     
     /* Start timer and animation */
-    func start(){
+    @objc func start(){
         self.startTimer()
     }
     
@@ -494,7 +494,7 @@ class InteractivePlayerView : UIView {
         self.addGestureRecognizer(gesture)
     }
     
-    func handlePanGesture(gesture:UIPanGestureRecognizer){
+    @objc func handlePanGesture(gesture:UIPanGestureRecognizer){
         if(!self.panEnabled){
             return;
         }
